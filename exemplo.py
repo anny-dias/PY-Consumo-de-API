@@ -6,6 +6,8 @@ OU
 py -3.11 -m pip install requests
 '''
 
+'''API Ninjas'''
+
 import requests
 
 cep = input('Informe o CEP: ')
@@ -21,7 +23,11 @@ try:
             print('CEP inexistente')
         else:                                   # exibe as informações
             print(f"Rua: {dicionario['logradouro']}")
+            print(f"Complemento: {dicionario['complemento']}")
             print(f"Bairro: {dicionario['bairro']}")
+            print(f"Cidade: {dicionario['localidade']}")
+            print(f"Estado: {dicionario['uf']}")
+  
     else:
         print(resposta.status_code)
 except ConnectionError:
